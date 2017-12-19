@@ -87,14 +87,23 @@ namespace Dynamo
 
         public static  Dictionary<string, Type> ClassMetadata()
         {
+
+            string json = @"{""Title"":""System.String"",""Text"":""System.String"",""Count"":""System.Int32""}";
+
+            var props = Newtonsoft.Json.JsonConvert.DeserializeObject<Dictionary<string, Type>>(json);
+
+
             //string className = "BlogPost";
 
-            var props = new Dictionary<string, Type>() {
-                { "Title", typeof(string) },
-                { "Text", typeof(string) },
-                { "Tags", typeof(string) }
+            //var props = new Dictionary<string, Type>() {
+            //    { "Title", typeof(string) },
+            //    { "Text", typeof(string) },
+            //    { "Tags", typeof(string) }
                 
-            };
+            //};
+
+            //var values = Newtonsoft.Json.JsonConvert.SerializeObject(props);
+
             return props;
         }
     }
